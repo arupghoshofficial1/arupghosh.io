@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arup Ghosh — AI-Driven Transformation Leader</title>
+<meta name="description" content="Arup Ghosh — AI-Driven Transformation & Operational Excellence Leader. 22+ years, $191M portfolio, $40M+ savings.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#10131A;
+    --ink-2:#171B24;
+    --panel:#1C212C;
+    --panel-2:#232936;
+    --gold:#C8932A;
+    --gold-soft:#E0B354;
+    --gold-glow:rgba(200,147,42,0.18);
+    --teal:#3BA3B8;
+    --cream:#F3EEE4;
+    --text:#E7E3DA;
+    --muted:#9AA0AC;
+    --muted-2:#6E7480;
+    --line:rgba(231,227,218,0.10);
+    --line-strong:rgba(231,227,218,0.18);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--ink);
+    color:var(--text);
+    font-family:'Outfit',sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  ::selection{background:var(--gold);color:var(--ink);}
+
+  /* grain + glow atmosphere */
+  body::before{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+    background:
+      radial-gradient(900px 600px at 85% -5%, var(--gold-glow), transparent 60%),
+      radial-gradient(700px 500px at 5% 105%, rgba(59,163,184,0.10), transparent 60%);
+  }
+  .wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 28px;}
+
+  /* ============ NAV ============ */
+  nav{
+    position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);
+    background:rgba(16,19,26,0.72);border-bottom:1px solid var(--line);
+  }
+  .nav-inner{max-width:1080px;margin:0 auto;padding:16px 28px;display:flex;align-items:center;justify-content:space-between;}
+  .brand{font-family:'Fraunces',serif;font-weight:600;font-size:20px;letter-spacing:0.5px;color:var(--cream);}
+  .brand span{color:var(--gold);}
+  .nav-links{display:flex;gap:26px;align-items:center;}
+  .nav-links a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:500;letter-spacing:0.3px;transition:color .2s;}
+  .nav-links a:hover{color:var(--cream);}
+  .nav-cta{
+    padding:9px 18px;border:1px solid var(--gold);border-radius:30px;color:var(--gold-soft) !important;
+    font-weight:600;transition:all .25s;
+  }
+  .nav-cta:hover{background:var(--gold);color:var(--ink) !important;}
+  .nav-toggle{display:none;background:none;border:none;color:var(--cream);font-size:24px;cursor:pointer;}
+
+  /* ============ HERO ============ */
+  header{padding:78px 0 64px;position:relative;}
+  .hero-grid{display:grid;grid-template-columns:1.35fr 0.85fr;gap:54px;align-items:center;}
+  .hero-left{min-width:0;}
+  .hero-photo-wrap{
+    position:relative;justify-self:center;
+    opacity:0;animation:rise 1s .4s forwards;
+  }
+  .hero-photo-frame{
+    position:relative;width:300px;max-width:100%;border-radius:18px;overflow:hidden;
+    border:1px solid var(--line-strong);
+    box-shadow:0 30px 70px rgba(0,0,0,0.5);
+  }
+  .hero-photo-frame img{display:block;width:100%;height:auto;}
+  .hero-photo-frame::after{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(180deg,rgba(16,19,26,0) 58%,rgba(16,19,26,0.5) 100%);
+  }
+  .hero-photo-wrap::before{
+    content:"";position:absolute;inset:-18px -18px auto auto;width:130px;height:130px;z-index:-1;
+    background:radial-gradient(circle,var(--gold-glow),transparent 70%);
+  }
+  .hero-photo-badge{
+    position:absolute;left:-14px;bottom:20px;background:linear-gradient(160deg,var(--panel-2),var(--ink-2));
+    border:1px solid rgba(200,147,42,0.4);border-radius:12px;padding:11px 16px;
+    box-shadow:0 12px 30px rgba(0,0,0,0.4);
+  }
+  .hero-photo-badge .bn{font-family:'Fraunces',serif;font-weight:600;font-size:17px;color:var(--gold-soft);line-height:1;}
+  .hero-photo-badge .bl{font-size:10px;color:var(--muted);letter-spacing:0.8px;text-transform:uppercase;margin-top:5px;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:9px;font-size:12.5px;font-weight:600;letter-spacing:2.5px;
+    text-transform:uppercase;color:var(--gold-soft);margin-bottom:26px;
+    opacity:0;animation:rise .8s .1s forwards;
+  }
+  .eyebrow::before{content:"";width:30px;height:1px;background:var(--gold);}
+  h1{
+    font-family:'Fraunces',serif;font-weight:600;font-size:clamp(44px,7vw,86px);line-height:0.98;
+    letter-spacing:-1px;color:var(--cream);margin-bottom:18px;
+    opacity:0;animation:rise .9s .22s forwards;
+  }
+  h1 .accent{color:var(--gold);font-style:italic;font-weight:500;}
+  .lede{
+    font-size:clamp(17px,2vw,21px);color:var(--muted);max-width:600px;line-height:1.55;font-weight:300;
+    opacity:0;animation:rise .9s .36s forwards;
+  }
+  .lede b{color:var(--text);font-weight:500;}
+
+  .hero-stats{
+    display:flex;flex-wrap:wrap;gap:38px;margin-top:46px;
+    opacity:0;animation:rise .9s .5s forwards;
+  }
+  .hstat .n{font-family:'Fraunces',serif;font-size:34px;font-weight:600;color:var(--cream);line-height:1;}
+  .hstat .n .u{color:var(--gold);}
+  .hstat .l{font-size:12px;color:var(--muted-2);letter-spacing:1px;text-transform:uppercase;margin-top:8px;}
+  .hero-cta{
+    margin-top:48px;display:flex;gap:16px;flex-wrap:wrap;
+    opacity:0;animation:rise .9s .62s forwards;
+  }
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;padding:15px 30px;border-radius:34px;
+    font-weight:600;font-size:15px;letter-spacing:0.3px;text-decoration:none;cursor:pointer;transition:all .25s;border:none;
+  }
+  .btn-primary{background:var(--gold);color:var(--ink);}
+  .btn-primary:hover{background:var(--gold-soft);transform:translateY(-2px);box-shadow:0 10px 30px var(--gold-glow);}
+  .btn-ghost{background:transparent;color:var(--cream);border:1px solid var(--line-strong);}
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold-soft);}
+
+  @keyframes rise{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+
+  /* ============ SECTION SHELL ============ */
+  section{padding:64px 0;position:relative;}
+  .sec-head{margin-bottom:46px;}
+  .sec-kicker{font-size:12.5px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold-soft);margin-bottom:12px;}
+  .sec-title{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(30px,4vw,44px);color:var(--cream);letter-spacing:-0.5px;}
+  .sec-sub{color:var(--muted);margin-top:12px;font-size:16px;font-weight:300;max-width:560px;}
+
+  /* ============ TIMELINE ============ */
+  .timeline{position:relative;margin-left:8px;padding-left:36px;}
+  .timeline::before{
+    content:"";position:absolute;left:7px;top:8px;bottom:8px;width:2px;
+    background:linear-gradient(180deg,var(--gold) 0%,var(--teal) 55%,var(--muted-2) 100%);
+  }
+  .tl-node{position:relative;margin-bottom:18px;}
+  .tl-dot{
+    position:absolute;left:-36px;top:26px;width:16px;height:16px;border-radius:50%;
+    background:var(--ink);border:3px solid var(--gold);transition:all .3s;box-shadow:0 0 0 0 var(--gold-glow);
+  }
+  .tl-node.muted .tl-dot{border-color:var(--muted-2);}
+  .tl-card{
+    background:linear-gradient(160deg,var(--panel),var(--ink-2));
+    border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:border-color .3s, transform .3s;
+  }
+  .tl-card:hover{border-color:var(--line-strong);}
+  .tl-node.open .tl-dot{box-shadow:0 0 0 6px var(--gold-glow);transform:scale(1.1);}
+  .tl-node.open .tl-card{border-color:rgba(200,147,42,0.45);}
+  .tl-trigger{
+    width:100%;text-align:left;background:none;border:none;cursor:pointer;color:inherit;
+    padding:22px 24px;display:flex;align-items:center;justify-content:space-between;gap:18px;
+  }
+  .tl-co{font-family:'Fraunces',serif;font-size:20px;font-weight:600;color:var(--cream);}
+  .tl-role{font-size:14px;color:var(--gold-soft);margin-top:3px;font-weight:500;}
+  .tl-right{display:flex;align-items:center;gap:18px;flex-shrink:0;}
+  .tl-years{font-size:13px;color:var(--muted);font-weight:500;letter-spacing:0.5px;white-space:nowrap;}
+  .tl-chev{width:22px;height:22px;flex-shrink:0;transition:transform .35s;color:var(--gold);}
+  .tl-node.open .tl-chev{transform:rotate(180deg);}
+  .tl-body{max-height:0;overflow:hidden;transition:max-height .45s ease;}
+  .tl-body-inner{padding:0 24px 24px;border-top:1px solid var(--line);}
+  .tl-loc{font-size:13px;color:var(--muted-2);margin:16px 0 14px;letter-spacing:0.4px;}
+  .tl-list{list-style:none;}
+  .tl-list li{position:relative;padding-left:22px;margin-bottom:11px;font-size:15px;color:var(--text);line-height:1.5;}
+  .tl-list li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;background:var(--gold);transform:rotate(45deg);}
+  .tl-list li b{color:var(--gold-soft);font-weight:600;}
+
+  /* ============ PROJECTS ============ */
+  .proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:18px;}
+  .proj-card{
+    background:linear-gradient(160deg,var(--panel),var(--ink-2));
+    border:1px solid var(--line);border-radius:16px;padding:26px 24px;cursor:pointer;
+    transition:transform .3s, border-color .3s, box-shadow .3s;position:relative;overflow:hidden;text-align:left;color:inherit;font-family:inherit;
+  }
+  .proj-card::after{
+    content:"";position:absolute;right:-30px;top:-30px;width:90px;height:90px;border-radius:50%;
+    background:radial-gradient(circle,var(--gold-glow),transparent 70%);opacity:0;transition:opacity .3s;
+  }
+  .proj-card:hover{transform:translateY(-4px);border-color:rgba(200,147,42,0.4);box-shadow:0 14px 40px rgba(0,0,0,0.35);}
+  .proj-card:hover::after{opacity:1;}
+  .proj-tag{font-size:11px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--teal);}
+  .proj-name{font-family:'Fraunces',serif;font-size:20px;font-weight:600;color:var(--cream);margin:12px 0 10px;line-height:1.2;}
+  .proj-blurb{font-size:14px;color:var(--muted);line-height:1.5;font-weight:300;}
+  .proj-metric{margin-top:16px;display:flex;align-items:baseline;gap:8px;}
+  .proj-metric .pm-n{font-family:'Fraunces',serif;font-size:24px;font-weight:600;color:var(--gold);}
+  .proj-metric .pm-l{font-size:12px;color:var(--muted-2);}
+  .proj-more{margin-top:16px;font-size:12.5px;font-weight:600;color:var(--gold-soft);letter-spacing:0.5px;display:flex;align-items:center;gap:6px;}
+
+  /* ============ MODAL ============ */
+  .modal-overlay{
+    position:fixed;inset:0;z-index:100;background:rgba(8,10,14,0.78);backdrop-filter:blur(6px);
+    display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;pointer-events:none;transition:opacity .3s;
+  }
+  .modal-overlay.open{opacity:1;pointer-events:auto;}
+  .modal{
+    background:linear-gradient(165deg,var(--panel-2),var(--ink-2));
+    border:1px solid var(--line-strong);border-radius:22px;max-width:600px;width:100%;max-height:86vh;overflow-y:auto;
+    padding:40px;transform:translateY(20px) scale(.98);transition:transform .35s;position:relative;
+  }
+  .modal-overlay.open .modal{transform:translateY(0) scale(1);}
+  .modal-close{
+    position:absolute;top:20px;right:20px;width:38px;height:38px;border-radius:50%;border:1px solid var(--line-strong);
+    background:transparent;color:var(--muted);font-size:20px;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;
+  }
+  .modal-close:hover{border-color:var(--gold);color:var(--gold);transform:rotate(90deg);}
+  .modal-tag{font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--teal);}
+  .modal-title{font-family:'Fraunces',serif;font-size:30px;font-weight:600;color:var(--cream);margin:12px 0 8px;line-height:1.1;}
+  .modal-context{font-size:14px;color:var(--muted-2);margin-bottom:22px;}
+  .modal-section-h{font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold-soft);margin:24px 0 12px;}
+  .modal p{font-size:15.5px;color:var(--text);line-height:1.65;margin-bottom:14px;font-weight:300;}
+  .modal ul{list-style:none;}
+  .modal li{position:relative;padding-left:24px;margin-bottom:12px;font-size:15px;color:var(--text);line-height:1.55;font-weight:300;}
+  .modal li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;background:var(--gold);transform:rotate(45deg);}
+  .modal li b{color:var(--gold-soft);font-weight:600;}
+  .modal-metrics{display:flex;flex-wrap:wrap;gap:14px;margin-top:8px;}
+  .mm{background:rgba(200,147,42,0.08);border:1px solid rgba(200,147,42,0.25);border-radius:12px;padding:14px 18px;flex:1;min-width:120px;}
+  .mm .n{font-family:'Fraunces',serif;font-size:24px;font-weight:600;color:var(--gold-soft);line-height:1;}
+  .mm .l{font-size:11.5px;color:var(--muted);margin-top:6px;line-height:1.3;}
+
+  /* ============ EXPERTISE STRIP ============ */
+  .exp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden;}
+  .exp-cell{background:var(--ink-2);padding:24px;transition:background .3s;}
+  .exp-cell:hover{background:var(--panel);}
+  .exp-cell h4{font-size:14px;font-weight:600;color:var(--gold-soft);margin-bottom:8px;letter-spacing:0.3px;}
+  .exp-cell p{font-size:13.5px;color:var(--muted);line-height:1.5;font-weight:300;}
+
+  /* ============ CTA / CONTACT ============ */
+  .contact{text-align:center;padding:80px 0 40px;}
+  .contact h2{font-family:'Fraunces',serif;font-size:clamp(28px,4vw,42px);font-weight:600;color:var(--cream);margin-bottom:16px;}
+  .contact p{color:var(--muted);max-width:480px;margin:0 auto 32px;font-weight:300;}
+  .contact-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+
+  footer{border-top:1px solid var(--line);padding:30px 0;text-align:center;color:var(--muted-2);font-size:13px;}
+  footer a{color:var(--muted);text-decoration:none;}
+  footer a:hover{color:var(--gold-soft);}
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width:880px){
+    .hero-grid{grid-template-columns:1fr;gap:36px;}
+    .hero-photo-wrap{order:-1;justify-self:start;}
+    .hero-photo-frame{width:230px;}
+  }
+  @media (max-width:720px){
+    .nav-links{position:fixed;inset:62px 0 auto;flex-direction:column;background:var(--ink-2);
+      padding:20px 28px;gap:18px;border-bottom:1px solid var(--line);transform:translateY(-130%);transition:transform .35s;}
+    .nav-links.open{transform:translateY(0);}
+    .nav-toggle{display:block;}
+    .hero-stats{gap:26px;}
+    .hero-photo-frame{width:200px;}
+    .modal{padding:30px 24px;}
+    .tl-right{flex-direction:column;align-items:flex-end;gap:8px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav>
+  <div class="nav-inner">
+    <div class="brand">Arup <span>Ghosh</span></div>
+    <button class="nav-toggle" id="navToggle">&#9776;</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#journey">Journey</a>
+      <a href="#projects">Projects</a>
+      <a href="#expertise">Expertise</a>
+      <a href="assets/Arup_Ghosh_Detailed_CV.pdf" target="_blank" rel="noopener" class="nav-cta">Download CV</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-left">
+        <span class="eyebrow">AI-Driven Transformation Leader</span>
+        <h1>Turning complexity into<br><span class="accent">measurable value.</span></h1>
+        <p class="lede">22+ years leading <b>AI-driven digital transformation</b> and <b>operational excellence</b> across global, multi-geography enterprises in healthcare, BPO and ITES.</p>
+
+        <div class="hero-stats">
+          <div class="hstat"><div class="n">22<span class="u">+</span></div><div class="l">Years Leading</div></div>
+          <div class="hstat"><div class="n"><span class="u">$</span>191M</div><div class="l">Portfolio</div></div>
+          <div class="hstat"><div class="n"><span class="u">$</span>40M<span class="u">+</span></div><div class="l">Cost Saved</div></div>
+          <div class="hstat"><div class="n">20<span class="u">&rarr;</span>61</div><div class="l">NPS Lift</div></div>
+        </div>
+
+        <div class="hero-cta">
+          <a href="assets/Arup_Ghosh_Detailed_CV.pdf" target="_blank" rel="noopener" class="btn btn-primary">
+            Download Detailed CV
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+          </a>
+          <a href="#journey" class="btn btn-ghost">Explore my journey</a>
+        </div>
+      </div>
+
+      <div class="hero-photo-wrap">
+        <div class="hero-photo-frame">
+          <img src="assets/arup_headshot.jpg" alt="Arup Ghosh" loading="eager">
+        </div>
+        <div class="hero-photo-badge">
+          <div class="bn">Arup Ghosh</div>
+          <div class="bl">Associate Vice President</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ TIMELINE ============ -->
+<section id="journey">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-kicker">Career Journey</div>
+      <h2 class="sec-title">Two decades, one trajectory</h2>
+      <p class="sec-sub">Click any role to see what I built and delivered.</p>
+    </div>
+    <div class="timeline" id="timeline"><!-- injected by JS --></div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-kicker">Signature Projects</div>
+      <h2 class="sec-title">Transformations that moved the needle</h2>
+      <p class="sec-sub">Click a project for the full story — scope, approach and outcomes.</p>
+    </div>
+    <div class="proj-grid" id="projGrid"><!-- injected by JS --></div>
+  </div>
+</section>
+
+<!-- ============ EXPERTISE ============ -->
+<section id="expertise">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-kicker">Areas of Expertise</div>
+      <h2 class="sec-title">Where I create leverage</h2>
+    </div>
+    <div class="exp-grid">
+      <div class="exp-cell"><h4>AI &amp; Digital Transformation</h4><p>Agentic AI, Generative AI, NLP, Intelligent Automation, RPA, Contact Center AI</p></div>
+      <div class="exp-cell"><h4>Data / Metrics-Driven Governance</h4><p>Transformation governance, predictive modeling, value realization, KPI &amp; MIS</p></div>
+      <div class="exp-cell"><h4>Operational Delivery</h4><p>P&amp;L, SLA/KPI governance, platform modernization, organization change management</p></div>
+      <div class="exp-cell"><h4>Process Excellence</h4><p>Lean Six Sigma (MBB), CMMI L5, ITIL 4, Agile, Business Process Reengineering, CSAT</p></div>
+      <div class="exp-cell"><h4>Strategic Leadership</h4><p>Trusted advisor to CEOs &amp; COOs, global delivery models, portfolio governance</p></div>
+      <div class="exp-cell"><h4>Domain</h4><p>US Healthcare Payor, ACA, BPaaS, PaaS, BPO, ITES — US, India, Mexico, Philippines</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2>Let&rsquo;s build what&rsquo;s next.</h2>
+    <p>Open to senior executive conversations on AI transformation, global delivery and operational excellence.</p>
+    <div class="contact-row">
+      <a href="mailto:arupghoshofficial1@gmail.com" class="btn btn-primary">Email Me</a>
+      <a href="https://www.linkedin.com/in/arup-ghosh-deliveryexcellence" target="_blank" rel="noopener" class="btn btn-ghost">Connect on LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    &copy; <span id="yr"></span> Arup Ghosh &nbsp;&middot;&nbsp; Tampa, FL, USA &nbsp;&middot;&nbsp;
+    <a href="mailto:arupghoshofficial1@gmail.com">arupghoshofficial1@gmail.com</a>
+  </div>
+</footer>
+
+<!-- ============ MODAL ============ -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" id="modal" role="dialog" aria-modal="true">
+    <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  /* ---- mobile nav ---- */
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  /* ================= DATA (your backend content) ================= */
+  const TIMELINE = [
+    {
+      co: "Wipro Ltd — HealthPlan Services",
+      role: "Operation Excellence & Transformation Head",
+      years: "2021 — Present",
+      loc: "Tampa, FL, USA",
+      muted: false,
+      points: [
+        "Own <b>end-to-end AI transformation delivery</b> across 11 healthcare payor customers — $191M revenue, 2,500+ resources — from use-case ideation and architecture to deployment, hyper-care and value realization.",
+        "Delivered <b>$40M+ in cumulative cost savings since 2021</b> (~$14.5M in 2021–23, $12.3M in 2024, $13.5M in 2025).",
+        "Program-manage the full AI &amp; digital transformation portfolio with C-suite governance, KPI tracking and risk management.",
+        "Partner with customers to co-create AI roadmaps; lifted NPS from <b>20 to 61</b> and improved Star Ratings."
+      ]
+    },
+    {
+      co: "Wipro Ltd — Digital Operations & Platforms",
+      role: "Platform Quality Head, Technology & Automation Assurance",
+      years: "2016 — 2021",
+      loc: "Tampa, FL, USA",
+      muted: false,
+      points: [
+        "Constructed an <b>enterprise-wide automation framework</b> for a 65,000-resource business unit, standardizing RPA across geographies.",
+        "Led <b>platform modernization</b> and end-to-end re-engineering of core platforms; achieved CMMI Level 5.",
+        "Integrated IT frameworks of acquired entities ensuring full CMMI, ITIL and Agile compliance."
+      ]
+    },
+    {
+      co: "Unisys Global Services India",
+      role: "Process Excellence Manager / SEPG Lead",
+      years: "2011 — 2016",
+      loc: "Bengaluru, India",
+      muted: true,
+      points: [
+        "Led the <b>CMMI Level 5 certification program</b> as Assessment Team Member — gap analysis to audit readiness.",
+        "Executed <b>15+ Lean Six Sigma projects</b>; spearheaded a Customer Delight Program achieving 30% CSAT improvement over four years."
+      ]
+    },
+    {
+      co: "PwC · IBM · Tech Mahindra · TCS",
+      role: "Quality & Process Leadership (Earlier Career)",
+      years: "2004 — 2011",
+      loc: "India & United Kingdom",
+      muted: true,
+      points: [
+        "Progressive quality, process-excellence and program-management roles — CMMI L5 implementation, ISO 9001/27001 auditing, SLA-based service management and process consulting.",
+        "Cross-industry exposure across energy &amp; utilities, manufacturing, banking and insurance."
+      ]
+    }
+  ];
+
+  const PROJECTS = [
+    {
+      tag: "Contact Center AI",
+      name: "AI in a Regulated Contact Center",
+      blurb: "First-of-its-kind AI deployment in US healthcare contact center operations.",
+      metricN: "55%", metricL: "calls resolved by AI",
+      context: "Wipro U.S. Healthcare · 2024–2025",
+      overview: "Pioneered the first Contact Center AI implementation within Wipro U.S. Healthcare — a first in this highly regulated industry — owning the full program from business case through go-live and hyper-care.",
+      whatH: "What I delivered",
+      what: [
+        "AI Voice IVR for transaction-based calls",
+        "AI Agent Assist for live, human-managed calls",
+        "100% automated audit and real-time translation",
+        "Advanced analytics dashboards for operations"
+      ],
+      metrics: [
+        {n:"55%", l:"calls resolved without human intervention"},
+        {n:"20%", l:"reduction in Average Handle Time"},
+        {n:"10%", l:"improvement in First Call Resolution"}
+      ]
+    },
+    {
+      tag: "Back-Office AI",
+      name: "Back-Office AI Use-Case Portfolio",
+      blurb: "A suite of AI/ML use cases across claims, enrollment and operations.",
+      metricN: "81→97%", metricL: "straight-through processing",
+      context: "Wipro HealthPlan Services",
+      overview: "Designed and delivered a comprehensive back-office AI portfolio, embedding AI/ML across the processing value chain to remove manual effort and lift quality.",
+      whatH: "Use cases delivered",
+      what: [
+        "<b>NLP document reading</b>, classification &amp; extraction — eliminating manual indexing",
+        "<b>AI Agent Assist</b> for back-office processors — real-time decision guidance",
+        "<b>Auto-Auditor</b> — 100% automated quality audit replacing manual sampling",
+        "<b>Error-Prediction ML</b> — flagging high-risk transactions before processing",
+        "<b>Auto-Processing BOT</b> — straight-through processing for routine claims",
+        "<b>Smart Workforce Allocation</b> — analytics-powered queue prioritization"
+      ],
+      metrics: [
+        {n:"81→97%", l:"straight-through processing"},
+        {n:"55→81%", l:"claims auto-adjudication"},
+        {n:"36→55%", l:"bot-executed work"}
+      ]
+    },
+    {
+      tag: "Cost Transformation",
+      name: "$40M+ Cost Transformation",
+      blurb: "Multi-year cost-out program spanning automation, platform and AI levers.",
+      metricN: "$40M+", metricL: "saved since 2021",
+      context: "Wipro HealthPlan Services · 2021–2025",
+      overview: "Led a sustained, multi-lever cost-transformation program across an 11-customer payor portfolio, compounding savings year over year while improving experience.",
+      whatH: "Savings by phase",
+      what: [
+        "<b>~$14.5M (2021–2023)</b> — early automation, Lean Six Sigma, offshore-shift optimization",
+        "<b>$12.3M (2024)</b> — legacy platform modernization and productivity tooling",
+        "<b>$13.5M (2025)</b> — Contact Center AI and other levers; eliminated SLA penalties"
+      ],
+      metrics: [
+        {n:"$40M+", l:"cumulative savings"},
+        {n:"150+", l:"Lean Six Sigma / BPR initiatives"},
+        {n:"20→61", l:"NPS transformation"}
+      ]
+    },
+    {
+      tag: "Enterprise Automation",
+      name: "Enterprise Automation Framework",
+      blurb: "Unified RPA & automation framework for a 65,000-resource business unit.",
+      metricN: "65,000", metricL: "resource business unit",
+      context: "Wipro Digital Operations & Platforms · 2016–2021",
+      overview: "Constructed and scaled an enterprise-wide automation framework, standardizing RPA deployment across geographies and accelerating operational velocity.",
+      whatH: "Highlights",
+      what: [
+        "Standardized RPA deployment and governance across multiple geographies",
+        "Integrated third-party AI/RPA technologies with stakeholder buy-in",
+        "Led technical feasibility audits aligning capability to growth objectives",
+        "Increased automation rate ~20% year over year"
+      ],
+      metrics: [
+        {n:"~20%", l:"YoY automation rate increase"},
+        {n:"CMMI L5", l:"achieved for the unit"}
+      ]
+    },
+    {
+      tag: "Quality & Process",
+      name: "CMMI Level 5 & Customer Delight",
+      blurb: "Enterprise quality systems and a multi-year CSAT transformation.",
+      metricN: "30%", metricL: "CSAT improvement",
+      context: "Unisys Global Services India · 2011–2016",
+      overview: "Owned the CMMI Level 5 certification program end-to-end and drove a structured Customer Delight Program rooted in Voice-of-Customer analysis.",
+      whatH: "What I delivered",
+      what: [
+        "CMMI Level 5 certification as Assessment Team Member — gap analysis to audit readiness",
+        "15+ Lean Six Sigma improvement projects across global service lines",
+        "Customer Delight Program with structured VOC analysis and workflow redesign"
+      ],
+      metrics: [
+        {n:"30%", l:"CSAT improvement over 4 years"},
+        {n:"15+", l:"Lean Six Sigma projects"}
+      ]
+    }
+  ];
+
+  /* ================= RENDER TIMELINE ================= */
+  const tl = document.getElementById('timeline');
+  TIMELINE.forEach((item, i) => {
+    const node = document.createElement('div');
+    node.className = 'tl-node' + (item.muted ? ' muted' : '');
+    node.innerHTML = `
+      <div class="tl-dot"></div>
+      <div class="tl-card">
+        <button class="tl-trigger" aria-expanded="false">
+          <span>
+            <span class="tl-co">${item.co}</span>
+            <span class="tl-role" style="display:block">${item.role}</span>
+          </span>
+          <span class="tl-right">
+            <span class="tl-years">${item.years}</span>
+            <svg class="tl-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </span>
+        </button>
+        <div class="tl-body">
+          <div class="tl-body-inner">
+            <div class="tl-loc">${item.loc}</div>
+            <ul class="tl-list">${item.points.map(p => '<li>'+p+'</li>').join('')}</ul>
+          </div>
+        </div>
+      </div>`;
+    tl.appendChild(node);
+
+    const trigger = node.querySelector('.tl-trigger');
+    const body = node.querySelector('.tl-body');
+    trigger.addEventListener('click', () => {
+      const isOpen = node.classList.contains('open');
+      // close others
+      document.querySelectorAll('.tl-node.open').forEach(n => {
+        if (n !== node) { n.classList.remove('open'); n.querySelector('.tl-body').style.maxHeight = null; n.querySelector('.tl-trigger').setAttribute('aria-expanded','false'); }
+      });
+      if (isOpen) {
+        node.classList.remove('open'); body.style.maxHeight = null; trigger.setAttribute('aria-expanded','false');
+      } else {
+        node.classList.add('open'); body.style.maxHeight = body.scrollHeight + 'px'; trigger.setAttribute('aria-expanded','true');
+      }
+    });
+    // open the first one by default
+    if (i === 0) { setTimeout(() => trigger.click(), 400); }
+  });
+
+  /* ================= RENDER PROJECTS ================= */
+  const grid = document.getElementById('projGrid');
+  PROJECTS.forEach((p, idx) => {
+    const card = document.createElement('button');
+    card.className = 'proj-card';
+    card.innerHTML = `
+      <div class="proj-tag">${p.tag}</div>
+      <div class="proj-name">${p.name}</div>
+      <div class="proj-blurb">${p.blurb}</div>
+      <div class="proj-metric"><span class="pm-n">${p.metricN}</span><span class="pm-l">${p.metricL}</span></div>
+      <div class="proj-more">View details
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+      </div>`;
+    card.addEventListener('click', () => openModal(idx));
+    grid.appendChild(card);
+  });
+
+  /* ================= MODAL ================= */
+  const overlay = document.getElementById('modalOverlay');
+  const modalContent = document.getElementById('modalContent');
+  const modalClose = document.getElementById('modalClose');
+
+  function openModal(idx) {
+    const p = PROJECTS[idx];
+    modalContent.innerHTML = `
+      <div class="modal-tag">${p.tag}</div>
+      <div class="modal-title">${p.name}</div>
+      <div class="modal-context">${p.context}</div>
+      <p>${p.overview}</p>
+      <div class="modal-section-h">${p.whatH}</div>
+      <ul>${p.what.map(w => '<li>'+w+'</li>').join('')}</ul>
+      <div class="modal-section-h">Impact</div>
+      <div class="modal-metrics">${p.metrics.map(m => `<div class="mm"><div class="n">${m.n}</div><div class="l">${m.l}</div></div>`).join('')}</div>`;
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() { overlay.classList.remove('open'); document.body.style.overflow = ''; }
+  modalClose.addEventListener('click', closeModal);
+  overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+</script>
+</body>
+</html>
